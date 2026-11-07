@@ -61,5 +61,6 @@ Open your command prompt or PowerShell and install PyInstaller:
 ```bash
 pip install pyinstaller
 ```
-### 2. Install PyInstaller
+### 3 . Compile program
+```bash
 pyinstaller --onefile --windowed SaveEditor.py
