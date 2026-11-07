@@ -1,0 +1,5 @@
+# Ignorar arquivos de build ou logs
+*.log
+dist/
+build/
+Compilar_para_EXE.bat
