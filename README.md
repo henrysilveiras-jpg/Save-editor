@@ -45,7 +45,7 @@ Depending on your game version, your save files are located in these directories
 * **Xbox / PC Game Pass (Microsoft Store):**
   1. Press `Win + R`, type `%localappdata%` and hit Enter.
   2. Go to `Packages` and find the game's folder (starts with `NKGames.SupermarketSimulator...`).
-  3. Navigate into `LocalCache\Local\` to find the binary save files.
+  3. Navigate into `SystemAppData\wgs\000900000A390B88_000000000000000000000000657D9E7E` to find the binary save files.
 
 ---
 
