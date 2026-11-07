@@ -49,7 +49,7 @@ Depending on your game version, your save files are located in these directories
 
 ---
 
-## 🛠️ How to Compile from Source (Python Version)
+## 🛠️ How to Compile from Source
 
 If you downloaded the Python script (`SaveEditor.py`) and want to compile your own standalone executable (`.exe`) without triggering false-positive antivirus warnings (by avoiding the temporary `--onefile` unpacking method), follow these steps:
 
