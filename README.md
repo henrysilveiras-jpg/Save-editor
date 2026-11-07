@@ -60,3 +60,4 @@ Make sure you have **Python 3.x** installed on your system along with its standa
 Open your command prompt or PowerShell and install PyInstaller:
 ```bash
 pip install pyinstaller
+pyinstaller --onefile --windowed SaveEditor.py
