@@ -1,61 +1,62 @@
-Supermarket Simulator — Universal Save Editor (Python Version)
-Description / Descrição
-A lightweight desktop tool built in Python with a graphical interface (Tkinter) designed to easily and safely edit your save files for Supermarket Simulator. It features automatic platform detection, supporting both Steam (.es3) and Xbox / PC Game Pass (Binary) versions, allowing you to modify your Money, Store Level, and Store Points without risking data corruption.
+# Supermarket Simulator — Universal Save Editor
 
-Prerequisites & Dependencies / Pré-requisitos e Dependências
-To run or compile this script from the source code, you will need:
+<p align="center">
+  <b>A lightweight, cross-platform utility to edit Money, Store Level, and Store Points for Supermarket Simulator.</b>
+</p>
 
-Python 3.x installed on your system.
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-supported-versions">Supported Versions</a> •
+  <a href="#-where-to-find-your-saves">Save Locations</a> •
+  <a href="#-how-to-compile-from-source">Compilation Guide</a> •
+  <a href="#-license">License</a>
+</p>
 
-The standard libraries used are tkinter, re, shutil, datetime, and pathlib (which come built-in with Python).
+---
 
-PyInstaller (only required if you want to compile the script into a standalone .exe).
+## 🚀 Features
 
-How to Compile into an Executable (.exe) / Como Compilar para Executável
-To compile the script into a clean Windows application while avoiding false-positive antivirus flags (by avoiding the --onefile temporary unpacking method), follow these steps:
+* **Universal Platform Detection:** Automatically recognizes and adapts to **Steam (`.es3`)** and **Xbox / PC Game Pass** save files.
+* **Smart Byte Compensation:** For Xbox binary containers, it performs surgical byte adjustments to prevent structural corruption. For Steam, it performs clean, direct text replacement.
+* **Auto-Reading:** Instantly loads and displays your current *Money*, *Store Level*, and *Store Points* upon opening a file.
+* **Automatic Secure Backup:** Generates a timestamped backup (`.backup`) in your `Documents\Supermarket Simulator Backups` folder before modifying anything.
+* **Modern Desktop Interface:** Built with native, lightweight GUI frameworks (available in Python/Tkinter or C++ Win32).
 
-Open your terminal (Command Prompt or PowerShell) and install PyInstaller:
+---
 
-Bash
+## 🎮 Supported Versions
+
+| Platform | File Extension / Type | Editing Method |
+| :--- | :--- | :--- |
+| **Steam** | `.es3` (Plain Text / JSON) | Direct replacement |
+| **Xbox / PC Game Pass** | Binary / Serialized Container | Surgical byte-size compensation |
+
+---
+
+## 📂 Where to Find Your Saves
+
+Depending on your game version, your save files are located in these directories:
+
+* **Steam:**
+  1. Press `Win + R`, type `%appdata%` and hit Enter.
+  2. Navigate back to **`LocalLow`** (or go directly to: `C:\Users\<YourUsername>\AppData\LocalLow\NK Games\Supermarket Simulator`).
+  3. Look for files ending in **`.es3`**.
+
+* **Xbox / PC Game Pass (Microsoft Store):**
+  1. Press `Win + R`, type `%localappdata%` and hit Enter.
+  2. Go to `Packages` and find the game's folder (starts with `NKGames.SupermarketSimulator...`).
+  3. Navigate into `LocalCache\Local\` to find the binary save files.
+
+---
+
+## 🛠️ How to Compile from Source (Python Version)
+
+If you downloaded the Python script (`SaveEditor.py`) and want to compile your own standalone executable (`.exe`) without triggering false-positive antivirus warnings (by avoiding the temporary `--onefile` unpacking method), follow these steps:
+
+### 1. Prerequisites
+Make sure you have **Python 3.x** installed on your system along with its standard modules (`tkinter`, `pathlib`, `shutil`, `re`, `datetime`).
+
+### 2. Install PyInstaller
+Open your command prompt or PowerShell and install PyInstaller:
+```bash
 pip install pyinstaller
-Navigate to the folder where your SaveEditor.py script is saved:
-
-Bash
-cd path/to/your/script-folder
-Compile the script using the --windowed flag (which hides the black command prompt window when the app opens):
-
-Bash
-pyinstaller --windowed SaveEditor.py
-Once the process is finished, a new folder named dist will be created in your directory. Inside dist\SaveEditor\, you will find your clean, ready-to-use SaveEditor.exe along with its required runtime files.
-
-Where to Find Your Save Files / Onde Encontrar Seus Saves
-Steam:
-
-Press Win + R, type %appdata%, go back one folder to LocalLow, and navigate to: NK Games\Supermarket Simulator (files end with .es3).
-
-Xbox / PC Game Pass (Microsoft Store):
-
-Press Win + R, type %localappdata%, go to Packages, look for the game's package folder, and navigate to LocalCache\Local\ where the binary save containers are stored.
-
-How to Use / Como Usar
-Run SaveEditor.exe.
-
-Click "Open Save" and select your save file (the tool automatically detects if it's Steam or Xbox).
-
-Type your desired values into the Money, Store Level, and Store Points boxes.
-
-Click "Save Edited File".
-
-Note: A secure timestamped backup (.backup) will automatically be saved in your Documents\Supermarket Simulator Backups folder before any modifications are applied.
-
-Main Features / Principais Recursos
-Universal Detection: Automatically recognizes Steam (.es3) and Xbox save structures.
-
-Smart Byte Compensation: Adjusts internal structure spaces for Xbox binary saves to prevent corruption, and performs clean direct writing for Steam saves.
-
-Auto-Reading: Instantly loads your current stats upon opening a file.
-
-Automatic Secure Backup: Protects your progress by storing a backup copy in your Documents folder.
-
-Shout Outs / Agradecimentos
-Special thanks to the Supermarket Simulator modding community for their continuous feedback and support!
